@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳泊錞 | 個人履歷</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 使用 Inter 字體作為主要英文字體，Noto Sans TC 作為中文後備字體 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+        }
+        /* 針對標題使用更粗的字重 */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        /* 定義主題色，方便統一修改 */
+        .text-theme {
+            color: #64ffda;
+        }
+        .bg-theme {
+            background-color: #64ffda;
+        }
+        .border-theme {
+            border-color: #64ffda;
+        }
+        /* 自定義捲軸樣式 (適用於 Webkit 核心瀏覽器) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a192f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8892b0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64ffda;
+        }
+        /* 導覽列項目底線動畫效果 */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #64ffda;
+            transition: width 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #64ffda;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        /* 區塊標題樣式 */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            font-size: 1.75rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #ccd6f6;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            position: relative;
+            top: 2px;
+            width: 200px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: #233554;
+        }
+    </style>
+</head>
+<body class="leading-relaxed antialiased">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md transition-transform duration-300 shadow-lg" style="background-color: rgba(10, 25, 47, 0.85);">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-black text-theme">BC</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="nav-link">關於我</a>
+                <a href="#education" class="nav-link">學歷</a>
+                <a href="#awards" class="nav-link">得獎紀錄</a>
+                <a href="#skills" class="nav-link">專業技能</a>
+                <a href="#portfolio" class="nav-link">作品集</a>
+                <a href="#contact" class="nav-link">聯絡我</a>
+                <a href="104CV.pdf" target="_blank" class="px-4 py-2 border border-theme rounded text-theme hover:bg-theme hover:bg-opacity-10 transition-colors duration-300">我的履歷</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">關於我</a>
+            <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-700">學歷</a>
+            <a href="#awards" class="block py-2 px-4 text-sm hover:bg-gray-700">得獎紀錄</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-700">專業技能</a>
+            <a href="#portfolio" class="block py-2 px-4 text-sm hover:bg-gray-700">作品集</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">聯絡我</a>
+            <a href="104CV.pdf" target="_blank" class="block py-2 px-4 text-sm hover:bg-gray-700">我的履歷</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 md:px-16 lg:px-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-start pt-24">
+            <p class="text-theme text-lg mb-4">你好，我的名字是</p>
+            <h1 class="text-5xl md:text-7xl font-black text-gray-200">陳泊錞 (Bo-Chun Chen)</h1>
+            <p class="max-w-xl mt-6 text-gray-400">
+                我剛從國立中央大學天文研究所畢業，對網頁開發、資料庫管理及數據分析抱持高度興趣。我熱衷於從未知領域中學習新知，並享受解決問題的過程。
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24">
+            <h2 class="section-heading mb-12">
+                <span class="text-theme mr-3">01.</span> 關於我
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-3 text-gray-400 space-y-4">
+                    <p>
+                        您好！我是陳泊錞。我的求學經歷培養了我堅定的目標感與投入精神。從物理到天文，再到程式語言，我享受探索與科技相關的未知領域，並樂於從中學習新知。
+                    </p>
+                     <p>
+                        在研究所期間，我主要使用 Python 進行天文研究，這讓我重新認識到程式語言的魅力，並願意投入時間鑽研。這段經歷讓我確信，學習的熱誠足以彌補天賦的不足。即使遇到挫折，我也不害怕，因為我知道這是通往成長的必經之路。
+                    </p>
+                    <p>
+                        我是一個不畏懼挫折的人，對解決問題充滿熱情，並渴望在網路工程領域中，持續挑戰與學習，將我的想法透過程式碼變為現實。
+                    </p>
+                </div>
+                <div class="md:col-span-2 relative group w-full max-w-sm mx-auto">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-400 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                    <div class="relative w-full h-full rounded-lg bg-[#0a192f] overflow-hidden">
+                        <img src="https://placehold.co/400x400/1e293b/ffffff?text=Your+Photo" alt="陳泊錞的照片" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-24">
+            <h2 class="section-heading mb-12">
+                <span class="text-theme mr-3">02.</span> 學歷
+            </h2>
+            <div class="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                <!-- Education Item 1 -->
+                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="10"><path fill-rule="nonzero" d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"/></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#112240] p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-gray-200">國立興大附中</div>
+                            <time class="font-caveat font-medium text-sm text-theme">2016/09 - 2019/06</time>
+                        </div>
+                        <div class="text-gray-400">自然組 | 第二類組</div>
+                    </div>
+                </div>
+                <!-- Education Item 2 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="10"><path fill-rule="nonzero" d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"/></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#112240] p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-gray-200">國立彰化師範大學</div>
+                            <time class="font-caveat font-medium text-sm text-theme">2019/09 - 2023/06</time>
+                        </div>
+                        <div class="text-gray-400">物理學系 | 學士</div>
+                    </div>
+                </div>
+                <!-- Education Item 3 -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="12" height="10"><path fill-rule="nonzero" d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"/></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#112240] p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-gray-200">國立中央大學</div>
+                            <time class="font-caveat font-medium text-sm text-theme">2023/09 - 2025/07</time>
+                        </div>
+                        <div class="text-gray-400">天文研究所 | 碩士</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Awards Section -->
+        <section id="awards" class="py-24">
+            <h2 class="section-heading mb-12">
+                <span class="text-theme mr-3">03.</span> 得獎紀錄
+            </h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+                <!-- Award Item 1 -->
+                <div class="bg-[#112240] p-6 rounded-lg shadow-lg flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-200 text-lg mb-2">書卷獎</h3>
+                        <p class="text-gray-400 text-sm">108 學年度第二學期，因學行成績優良，榮獲書卷獎第三名。</p>
+                    </div>
+                    <div class="text-right text-sm text-theme mt-4">2020/02 - 2020/06</div>
+                </div>
+                 <!-- Award Item 2 -->
+                <div class="bg-[#112240] p-6 rounded-lg shadow-lg flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-200 text-lg mb-2">系排第三名畢業</h3>
+                        <p class="text-gray-400 text-sm">於國立彰化師範大學物理學系在學期間，學業表現優異，以系上第三名成績畢業。</p>
+                    </div>
+                    <div class="text-right text-sm text-theme mt-4">2023/06</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24">
+            <h2 class="section-heading mb-12">
+                <span class="text-theme mr-3">04.</span> 專業技能
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span>Python</span>
+                </div>
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <span>HTML, CSS, JavaScript</span>
+                </div>
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span>Object-Oriented Programming (OOP)</span>
+                </div>
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7M4 7c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2M4 7h16M8 11h8m-8 4h8"></path></svg>
+                    <span>MySQL</span>
+                </div>
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                    <span>Linux</span>
+                </div>
+                <div class="bg-[#112240] p-4 rounded-lg flex items-center space-x-3 hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6 text-theme" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                    <span>web crawler</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-24">
+            <h2 class="section-heading mb-12">
+                <span class="text-theme mr-3">05.</span> 作品集
+            </h2>
+            <div class="space-y-16">
+                <!-- Project 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="relative group">
+                       <a href="./低質量X光雙星4U2127+119之軌道週期演化(終版).pdf" class="block" onclick="event.preventDefault();">
+                           <img src="./碩士論文第一頁.png" alt="碩士論文" class="rounded-lg shadow-lg w-full">
+                       </a>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-theme">碩士論文</p>
+                        <h3 class="text-2xl font-bold text-gray-200">低質量X光雙星4U2127+119之軌道週期演化</h3>
+                        <div class="bg-[#112240] p-6 rounded-lg shadow-lg my-4 text-left">
+                            <p class="text-gray-400">本論文旨在探討低質量X光雙星系統 4U2127+119 的軌道週期變化。透過分析與建立模型，探索該系統的長期演化趨勢。研究過程中大量使用 Python 進行數據處理與模擬。</p>
+                        </div>
+                        <ul class="flex justify-end space-x-4 text-gray-400">
+                            <li>Python</li>
+                            <li>數據分析</li>
+                            <li>天文物理</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="relative group">
+                       <a href="./S0823133.pdf" class="block" onclick="event.preventDefault();">
+                           <img src="./大學專題第一頁.png" alt="大學專題" class="rounded-lg shadow-lg w-full">
+                       </a>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-theme">大學專題</p>
+                        <h3 class="text-2xl font-bold text-gray-200">Slow-Roll Inflation in Cosmology</h3>
+                        <div class="bg-[#112240] p-6 rounded-lg shadow-lg my-4 text-left">
+                            <p class="text-gray-400">在 1981 年 Alan Guth 提出「宇宙爆脹」後，許多物理學家根據目前天文學的觀測模擬宇宙的歷史。此專題是其中一個模型的研究，探討宇宙學中的慢滾膨脹現象。</p>
+                        </div>
+                        <ul class="flex justify-end space-x-4 text-gray-400">
+                            <li>宇宙學</li>
+                            <li>廣義相對論</li>
+                            <li>理論物理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 text-center max-w-2xl mx-auto">
+            <p class="text-theme mb-4">06. 下一步？</p>
+            <h2 class="text-5xl font-bold text-gray-200 mb-4">保持聯繫</h2>
+            <p class="text-gray-400 mb-8">
+                我對網頁前端工程師的職位充滿熱情，並已準備好貢獻所學。如果您有任何職缺，歡迎隨時與我聯絡！
+            </p>
+            <a href="mailto:ivan890914@gmail.com" class="inline-block px-12 py-4 border border-theme rounded text-theme text-lg hover:bg-theme hover:bg-opacity-10 transition-colors duration-300">
+                寄信給我
+            </a>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-500 text-sm">
+        <div class="mb-4 flex justify-center space-x-6">
+            <a href="#" class="hover:text-theme transition-colors">
+                <!-- GitHub Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/%E6%B3%8A%E9%8C%9E-%E9%99%B3-b700ab355/" class="hover:text-theme transition-colors">
+                 <!-- LinkedIn Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="mailto:ivan890914@gmail.com" class="hover:text-theme transition-colors">
+                 <!-- Mail Icon -->
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+        </div>
+        <p>由 陳泊錞 設計與建置</p>
+        <p>&copy; 2025 Chen, Bo-Chun. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Hide Header on Scroll Down, Show on Scroll Up ---
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scroll Down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll Up
+                header.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+
+        // --- Active Nav Link on Scroll ---
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
